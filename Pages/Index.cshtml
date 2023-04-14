@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@using entity.models
+@{
+    ViewData["Title"] = "Home page";
+    var listArticle = ViewData["posts"] as List<Article>;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div>
+    <h2>Danh sách các bài viết</h2>
+     <ol>
+        @foreach (var item in listArticle)
+        {
+            <li>@item.Title</li>
+        }
+     </ol>
+</div>
